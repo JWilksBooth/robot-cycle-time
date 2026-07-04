@@ -1,0 +1,28 @@
+[project]
+name = "robot-cycle-time"
+version = "0.1.0"
+description = "Minimum-cycle-time robot motion scheduling RL environment: an N-joint arm must move rest-to-rest through a synchronized waypoint under per-joint velocity and acceleration limits, in the fewest timesteps. The engineer's per-joint time-optimal shortcut is provably wrong on a measured majority of instances. Dual ground truth: bisection over a position-space LP vs an independently assembled velocity-space formulation; the T*-1 infeasibility certificate holds under the grader's exact tolerances."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "JWilksBooth" }]
+license = { text = "MIT" }
+keywords = [
+    "reinforcement-learning", "rl-environment", "verifiers", "robotics",
+    "motion-planning", "trajectory-optimization", "cycle-time", "verifiable-rewards",
+]
+tags = ["single-turn", "robotics", "optimization", "physics-verified", "train", "eval"]
+dependencies = ["numpy", "scipy", "verifiers>=0.1.14", "datasets"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+include = ["robot_cycle_time.py", "pyproject.toml"]
+
+[tool.hatch.build.targets.wheel]
+include = ["robot_cycle_time.py"]
+
+[tool.verifiers.eval]
+num_examples = 50
+rollouts_per_example = 1
