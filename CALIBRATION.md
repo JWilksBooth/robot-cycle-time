@@ -62,7 +62,7 @@ attack gates pass. Generation ~276 ms/instance including the T\* solve.
 
 1. **Joint envelopes are tiered stylizations** bracketing published
    collaborative-arm specs, not vendor data — flagged for review by a senior
-   industrial-robotics practitioner; his corrections will land here as a
+   industrial-robotics practitioner; their corrections will land here as a
    documented revision.
 2. **Kinematic (not dynamic) limits**: velocity/acceleration boxes per joint;
    no torque coupling, no payload dynamics. First-rung isolation of the
